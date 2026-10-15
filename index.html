@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#172b27">
+<meta name="description" content="ATLAS — Construis une vie qui mérite d'être vécue. Première scène 3D jouable.">
+<title>ATLAS — Le Village des Fondations · 3D</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="world" aria-label="Village 3D explorable d'ATLAS"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="top-left"><div class="mark" aria-hidden="true">✧</div><div><div class="wordmark">ATLAS</div><div class="tagline">LA VIE EST LE JEU</div></div></div>
+  <div class="chapter"><span>CHAPITRE I</span><strong id="scene-title">Le Village des Fondations</strong></div>
+  <nav class="nav" aria-label="Navigation d'ATLAS">
+    <button class="nav-btn selected" data-route="village"><span>⌂</span> Village</button>
+    <button class="nav-btn" data-route="map"><span>◈</span> La Carte</button>
+    <button class="nav-btn" data-route="missions"><span>✧</span> Missions</button>
+    <button class="nav-btn" data-route="journal"><span>▤</span> Carnet</button>
+    <button class="nav-btn" data-route="avatar"><span>♙</span> Mon personnage</button>
+  </nav>
+  <div class="top-right"><button id="sound-btn" title="Activer ou désactiver l'ambiance sonore" aria-label="Activer ou désactiver le son">♫</button><button id="help-btn" title="Comment jouer" aria-label="Comment jouer">?</button></div>
+  <div class="scene-label"><span class="dot"></span><span id="season">Une journée d'automne</span><span class="separator">·</span><span id="fps-label">Monde 3D</span></div>
+  <div class="landmark-layer" id="landmarks" aria-label="Lieux du village"></div>
+  <div class="interact-hint hidden" id="interact-hint"><span>✦</span><span id="interact-text">Entrer</span><button id="enter-btn">Entrer ↗</button></div>
+  <div class="player-widget" id="player-widget"><div class="portrait">✦</div><div class="player-info"><small>MON EXPLORATEUR</small><strong id="player-name">Nouvelle partie</strong><span id="xp-display">Choisis ton chemin</span></div><button id="open-avatar" aria-label="Personnaliser mon personnage">›</button></div>
+  <div class="bottom-center"><div class="hint-desktop">CLIQUE POUR AVANCER <span>•</span> ZQSD / WASD POUR MARCHER <span>•</span> GLISSE POUR TOURNER LA CAMÉRA</div><div class="hint-mobile">TOUCHE LE SOL POUR AVANCER · GLISSE POUR EXPLORER</div></div>
+  <div class="mobile-joystick" id="joystick" aria-label="Joystick virtuel"><div id="stick"></div></div>
+  <div class="notice" id="toast" aria-live="polite"></div>
+  <div class="overlay hidden" id="overlay"><div class="shade" id="shade"></div><section class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title"><button class="close" id="close-panel" aria-label="Fermer">×</button><div id="panel-content"></div></section></div>
+  <div class="intro" id="intro"><div class="intro-inner"><div class="intro-star">✧</div><div class="intro-eyebrow">UNE NOUVELLE AVENTURE COMMENCE</div><h1>Et si ta vie devenait<br><em>un monde à explorer&nbsp;?</em></h1><p>Un Village à habiter. Des chemins à tracer. Une histoire qui ne se joue pas devant un écran, mais dans la vraie vie.</p><div class="intro-actions"><button id="start-btn" class="gold-button">Entrer dans le Village <span>↗</span></button><button id="character-btn" class="outline-button">Créer mon personnage</button></div><small>PREMIÈRE SCÈNE 3D JOUABLE · PRÉVERSION LOCALE</small></div></div>
+  <div class="loading" id="loading"><div class="loading-star">✧</div><div>Le monde prend forme…</div></div>
+  <div class="error-screen hidden" id="error-screen"><div>ATLAS nécessite un navigateur avec WebGL activé.</div><p>Ouvre ce lien dans Safari, Chrome ou Firefox récent.</p></div>
+</div>
+<script src="game.js" defer></script>
+</body>
+</html>
